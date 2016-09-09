@@ -1,0 +1,11 @@
+<?php
+
+include_once './utilitarios/proprios/sessao/head.php';
+include_once './utilitarios/proprios/sessao/eventos.php';
+include_once './utilitarios/proprios/sessao/album.php';
+include_once './utilitarios/proprios/sessao/coments.php';
+include_once './utilitarios/proprios/sessao/sobreNos.php';
+include_once './utilitarios/proprios/sessao/oracao.php';
+include_once './utilitarios/proprios/sessao/endereco.php';
+include_once './utilitarios/proprios/sessao/footer.php';
+
