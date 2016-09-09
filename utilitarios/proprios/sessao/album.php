@@ -14,7 +14,7 @@
                     <div class="team-member pDark">
                         <div class="member-img">
                             <a href="fotos/serJovem" title="Ser Jovem" target="_blank">
-                                <img class="img-responsive" src="images/Capas/sersantosemdeixardeserjovem.png" alt="">
+                                <img class="img-responsive" src="utilitarios/imagens/Capas/sersantosemdeixardeserjovem.png" alt="">
                             </a>
                         </div>
                         <span class="pos">VIII&deg; Ser Jovem</span> 
@@ -23,7 +23,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="team-member pDark">
                         <div class="member-img">
-                            <img class="img-responsive" src="images/sem_imagem.jpg" alt="">
+                            <img class="img-responsive" src="utilitarios/imagens/sem_imagem.jpg" alt="">
                         </div>
                         <span class="pos">&Aacute;lbum</span> 
                     </div>
@@ -31,7 +31,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="team-member pDark">
                         <div class="member-img">
-                            <img class="img-responsive" src="images/sem_imagem.jpg" alt="">
+                            <img class="img-responsive" src="utilitarios/imagens/sem_imagem.jpg" alt="">
                         </div>
                         <span class="pos">&Aacute;lbum</span> 
                     </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="team-member pDark">
                         <div class="member-img">
-                            <img class="img-responsive" src="images/sem_imagem.jpg" alt="">
+                            <img class="img-responsive" src="utilitarios/imagens/sem_imagem.jpg" alt="">
                         </div>
                         <span class="pos">&Aacute;lbum</span> 
                     </div>
