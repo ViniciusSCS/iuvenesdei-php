@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../Framework/AdminLTE-2.3.0/dist/css/AdminLTE.min.css">
         <link rel="stylesheet" href="../Framework/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css">
         <link href="../flexslider/flexslider.css" rel="stylesheet" />
-        <link rel="stylesheet" href="../css/animate.css">
+        <link rel="stylesheet" href="../css--/animate.css">
         <style>
             @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
             #titulo{
