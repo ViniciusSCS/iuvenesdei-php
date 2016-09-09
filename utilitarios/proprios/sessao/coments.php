@@ -25,7 +25,7 @@ $total = count($formComents);
                 <div class="form-group">
                     <h3 id="titulo" style="font-size: 20px;">Ent&atilde;o conta pra gente seu testemunho...</h3><br>
                     <label for="coments" id="titulo" style="font-size: 15px;">O que Deus mudou na sua vida?</label>
-                    <textarea name="coments" class="form-control" id="coments" cols="3" style="font-size: 15px;" placeholder="Deixe seu coment&aacute;rio..." title="Por favor, digite a sua mensagem (pelo menos 10 caracteres )" required></textarea>
+                    <textarea name="coments" class="form-control" id="coments" cols="3" style="font-size: 15px; font-family:'Open Sans'" placeholder="Deixe seu coment&aacute;rio..." title="Por favor, digite a sua mensagem (pelo menos 10 caracteres )" required></textarea>
 
                     <button name="enviar" type="submit" class="btn btn-lg btn-primary" id="enviar" style="font-size: 15px;">Enviar</button>                        
                 </div>
