@@ -42,7 +42,6 @@
                             <li><a href="#fotos" class="scroll-link" id="menu">Nosso &Aacute;lbum</a></li>
                             <li><a href="#comentarios" class="scroll-link" id="menu">Coment&aacute;rios</a></li>
                             <li><a href="#sobre" class="scroll-link" id="menu">Sobre N&oacute;s</a></li>
-                            <!--<li><a href="#social" class="scroll-link" id="menu">Redes Sociais</a></li>-->
                             <li><a href="#oracao" class="scroll-link" id="menu">Pedidos de Ora&ccedil;&atilde;o</a></li>
                             <li><a href="#local" class="scroll-link" id="menu">Endere&ccedil;o</a></li>
                         </ul>
