@@ -2,7 +2,7 @@ RewriteEngine on
 
 RewriteRule ^index$ index.php [L]
 
-RewriteRule ^fotos/serJovem$ fotos/serJovem.php [L]
+RewriteRule ^fotos/serJovem$ utilitarios/proprios/fotos/serJovem.php [L]
 #RewriteRule ^fotos/adoracao$ fotos/adoracao.php [L]
 
 SetOutputFilter DEFLATE
