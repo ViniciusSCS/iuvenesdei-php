@@ -4,7 +4,7 @@
                 <div id="main-slider" class="flexslider">
                     <ul class="slides">
                         <li>
-                            <img class="img-responsive" src="utilitarios/images/slides/cropped-id.png" alt="" />
+                            <img class="img-responsive" src="utilitarios/imagens/slides/cropped-id.png" alt="" />
                             <div class="flex-caption container">
                             </div>
                         </li>

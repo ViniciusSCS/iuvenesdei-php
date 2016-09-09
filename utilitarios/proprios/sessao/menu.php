@@ -9,7 +9,7 @@
                             <span class="icon-bar"></span> 
                             <span class="icon-bar"></span> 
                         </button>
-                        <img class="img-responsive" src="utilitarios/images/icone/icone.png" alt="" />
+                        <img class="img-responsive" src="utilitarios/imagens/icone/icone.png" alt="" />
                     </div>
                     <!--/.navbar-header-->
                     <div id="main-nav" class="collapse navbar-collapse">

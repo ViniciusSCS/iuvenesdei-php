@@ -15,7 +15,7 @@
         <script src="utilitarios/externos/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
         <script src="utilitarios/externos/js/jquery.nav.js" type="text/javascript"></script> 
         <script src="utilitarios/externos/js/jquery.fittext.js" type="text/javascript"></script> 
-        <script src="js/waypoints.js" type="text/javascript"></script> 
+        <script src="utilitarios/externos/js/waypoints.js" type="text/javascript"></script> 
         <script src="utilitarios/externos/flexslider/jquery.flexslider.js" type="text/javascript"></script>
         <script src="utilitarios/externos/js/custom.js" type="text/javascript"></script>
         <script src="utilitarios/externos/js/owl-carousel/owl.carousel.js"></script>

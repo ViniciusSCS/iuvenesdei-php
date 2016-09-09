@@ -11,7 +11,7 @@
         <link href="utilitarios/externos/css/animate.css" rel="stylesheet" media="screen">
         <link href="utilitarios/externos/flexslider/flexslider.css" rel="stylesheet" />
         <link href="css/font-awesome.min.css" rel="stylesheet" />
-        <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="utilitarios/externos/js/owl-carousel/owl.carousel.css" rel="stylesheet">
         <link href="utilitarios/externos/css/styles.css" rel="stylesheet"/>
         <link href="utilitarios/externos/css/timeline.css" rel="stylesheet"/>
         <link href="utilitarios/externos/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet">
