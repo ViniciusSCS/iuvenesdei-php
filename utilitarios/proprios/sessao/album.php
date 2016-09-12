@@ -13,7 +13,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="team-member pDark">
                         <div class="member-img">
-                            <a href="fotos/serJovem" title="Ser Jovem" target="_blank">
+                            <a href="fotos/serJovemVIII" title="Ser Jovem" target="_blank">
                                 <img class="img-responsive" src="utilitarios/imagens/Capas/sersantosemdeixardeserjovem.png" alt="">
                             </a>
                         </div>

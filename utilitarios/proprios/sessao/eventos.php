@@ -7,7 +7,7 @@
                 </div>
             </div> 
         </div>
-        <ul class="timeline">                    
+        <ul class="timeline">
             <!--<li>
                 <div class="timeline-badge success"><i class="fa fa-volume-up fa-lg"></i></div>
                 <div class="timeline-panel" id="timeline">
