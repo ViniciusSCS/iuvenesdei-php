@@ -37,8 +37,8 @@ if (!isset($_POST['msg'])) {
 
 //destinatário
     $mail->addAddress('alineribeirocastro@hotmail.com', 'Aline Ribeiro');
-    $mail->addCC('jairzinho_1806@outlook.com', 'Jair');
-    $mail->addCC('vinicius.eng.comp92@gmail.com', 'Vinicius');
+    $mail->addCC('jairzinho_1806@outlook.com', 'Jair Neto');
+    $mail->addCC('vinicius.eng.comp92@gmail.com', 'Vinicius Sarmento');
 
     $mail->isHTML(true);
     $mail->CharSet = 'utf-8';
