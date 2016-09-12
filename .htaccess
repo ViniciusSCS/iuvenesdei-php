@@ -3,9 +3,9 @@ RewriteEngine on
 RewriteRule ^index$ index.php [L]
 
 RewriteRule ^cpanel$ utilitarios/proprios/admin/loginAdmin.php [L]
-RewriteRule ^cpanel/principal$ utilitarios/proprios/admin/principal.php [L]
-RewriteRule ^cpanel/eventos$ utilitarios/proprios/admin/eventos.php [L]
-RewriteRule ^cpanel/album$ utilitarios/proprios/admin/album.php [L]
+RewriteRule ^cpanel/principal$ utilitarios/proprios/admin/layout/principal.php [L]
+RewriteRule ^cpanel/eventos$ utilitarios/proprios/admin/layout/eventos.php [L]
+RewriteRule ^cpanel/album$ utilitarios/proprios/admin/layout/album.php [L]
 
 RewriteRule ^fotos/serJovemVIII$ utilitarios/proprios/fotos/serJovem.php [L]
 
