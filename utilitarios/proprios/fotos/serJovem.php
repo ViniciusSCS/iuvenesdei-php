@@ -135,3 +135,7 @@
                 </a>
             </div>
         </section>
+        
+<?php
+    include_once './footerFotos.php';
+?>
