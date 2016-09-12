@@ -31,20 +31,19 @@
                 <a href="../../index2.html"><b>Admin</b>LTE</a>
             </div><!-- /.login-logo -->
             <div class="login-box-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-                <form action="../../index2.html" method="post">
+                <p class="login-box-msg">Sign in to start your session</p>                
+                <form action="controle/ctrlLogin.php" method="post" enctype="multipart/form-data" name="login" id="login">
                     <div class="form-group has-feedback">
                         <input type="usuario" class="form-control" placeholder="Usuario">
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="senha" class="form-control" placeholder="Senha">
+                        <input type="password" class="form-control" placeholder="Senha">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
-                        </div><!-- /.col -->
+                        <input type="hidden" value="login" name="acao" id="acao">
+                        <button id="entrar" type="submit" name="entrar" class="btn btn-lg btn-success btn-block">Entrar</button>
                     </div>
                 </form>
 

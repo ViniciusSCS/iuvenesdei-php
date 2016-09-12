@@ -9,11 +9,11 @@ require_once ('../persistencia/Conexao.class.php');
 $acao = (isset($_POST['acao'])) ? addslashes($_POST['acao']) : '';
 if ($acao == 'login') {
 
-    $email = addslashes($_POST["email"]);
+    $usuario = addslashes($_POST["usuario"]);
     $senha = MD5(addslashes($_POST["senha"]));
     try {
         $loginVO = new LoginVO();
-        $loginVO->setEmail($email);
+        $loginVO->setUsuario($usuario);
         $loginVO->setSenha($senha);
         $loginDAO = new LoginDAO();
 
@@ -22,22 +22,22 @@ if ($acao == 'login') {
         if ($NovoUsuario->getIdLogin() <= 0) {
             ?>
             <script>
-                alert("E-mail ou Senha Invalidos");
+                alert("Usuario ou Senha Invalidos");
                 //window.location.href = '/site/home-cursos/nai/atividadesInternacionais/index.php';
-                window.location.href = '../login.php';
+                window.location.href = 'iuvenesdei.com.br';
             </script>
             <?php
             //echo "Usu&aacute;rio ou Senha Inv&aacute;lida";
         } else {
             $_SESSION["idLogin"] = $NovoUsuario->getIdLogin();
-            $_SESSION["email"] = $NovoUsuario->getEmail();
+            $_SESSION["usuario"] = $NovoUsuario->getUsuario();
             $_SESSION["nome"] = $NovoUsuario->getNome();
 
             
             ?>
             <script>
                 //window.location.href = '/site/home-cursos/nai/atividadesInternacionais/inicio.php';
-                window.location.href = '../index.php';
+                window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel/principal';
             </script>
             <?php
         }
@@ -45,6 +45,6 @@ if ($acao == 'login') {
         echo $ex->getMessage();
     }
 }  else {
-    header("Location: ../login.php");
+    header("Location: iuvenesdei.com.br");
 }
 ?>
