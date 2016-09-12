@@ -1,5 +1,7 @@
-<?php include_once 'partials/header.php' ?>
-<?php include_once 'partials/sidebar.php' ?>
+<?php 
+    include_once 'headerAdmin.php';
+    include_once 'sidebarAdmin.php'
+?>
 <!-- Content Wrapper. Contains page content -->
     <section id="principal">
         <div class="content-wrapper">
@@ -15,4 +17,4 @@
         </div>
     </section>
 
-<?php include 'partials/footer.php' ?>
+<?php include 'footerAdmin.php' ?>

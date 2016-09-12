@@ -1,6 +1,6 @@
 <?php 
-    include_once 'partials/header.php';
-    include_once 'partials/sidebar.php';
+    include_once 'headerAdmin.php';
+    include_once 'sidebarAdmin.php'
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -102,4 +102,4 @@
     </section>
 </div>
 <!-- /.content-wrapper -->
-<?php include_once 'partials/footer.php' ?>
+<?php include_once 'partials/footerAdmin.php' ?>

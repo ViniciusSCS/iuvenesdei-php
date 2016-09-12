@@ -1,5 +1,7 @@
-<?php include 'partials/header.php' ?>
-<?php include 'partials/sidebar.php' ?>
+<?php 
+    include_once 'headerAdmin.php';
+    include_once 'sidebarAdmin.php'
+?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
   <input type="hidden" id="pagina" value="album">
@@ -98,4 +100,4 @@
     </section>
   </div>
   <!-- /.content-wrapper -->
-<?php include 'partials/footer.php' ?>
+<?php include 'footerAdmin.php' ?>
