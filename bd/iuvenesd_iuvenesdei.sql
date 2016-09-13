@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Fev-2016 às 20:42
+-- Generation Time: 13-Set-2016 às 16:46
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -23,6 +23,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `idLogin` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `usuario` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `senha` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`idLogin`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `login`
+--
+
+INSERT INTO `login` (`idLogin`, `nome`, `usuario`, `senha`) VALUES
+(1, 'Vinicius Sarmento', 'vinicius.sarmento', 'e10adc3949ba59abbe56e057f20f883e');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `postagem`
 --
 
@@ -32,7 +53,24 @@ CREATE TABLE IF NOT EXISTS `postagem` (
   `data` date NOT NULL,
   `hora` time NOT NULL,
   PRIMARY KEY (`idComents`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+
+--
+-- Extraindo dados da tabela `postagem`
+--
+
+INSERT INTO `postagem` (`idComents`, `coments`, `data`, `hora`) VALUES
+(1, 'Obrigado Senhor pelo dia de hoje, por ter mudado minha família, e minha história e por me fazer luz', '2016-02-06', '08:35:24'),
+(2, 'Dentre todas as graças já recebidas a maior delas é sem dúvidas a capacidade de amar e perdoar o próximo.\r\nObrigada senhor por todas as bênçãos, pelo Teu imenso amor e fidelidade <3', '2016-02-06', '15:48:51'),
+(3, 'Entre todas as graças alcançadas é sem duvida a perca de grande parte da minha timidez e ( até aprender a conversar) e confiar sempre em Deus mesmo nos momentos onde tudo parece está dando errado entregar o futuro nas mãos de Deus e esperar o tempo do pai.\r\n', '2016-02-15', '22:14:51'),
+(4, 'ESSE GRUPO É UMA BENÇÃO DE DEUS *------*', '2016-02-20', '20:27:39'),
+(5, 'Melhor grupooo amo fazer parte dessa família que me acolheu!!', '2016-02-21', '12:26:27'),
+(6, 'Deus realizou inúmeras graças na minha vida, mas sem dúvidas a maior delas foi ter me chamado à servidão nesse grupo maravilhoso!', '2016-02-21', '22:36:24'),
+(7, 'Deus realizou e tem realizado várias graças na minha vida, na qual a principal delas é o desejo de buscar mais a deus, e conheci pessoas maravilhosas.\r\n', '2016-02-22', '16:00:26'),
+(8, 'Melhor grupo <3', '2016-02-25', '15:43:54'),
+(9, 'Passamos o nosso ano inteiro clamando das dificuldades, clamando de nosso dia-a-dia, reclamando de tudo e de todos fazemos de nossas vidas a mais difícil, complexa, fazemos com que todos ao nosso redor fique convencido de tal coisa, nos fazendo muitas das vezes de vitimas, colocando nossas limitações e dificuldades maior do que de qualquer outra pessoa, chegamos ao ponto de perguntar a DEUS o por que disso em nossas vidas.\nMais basta 1 pequeno momento de reflexão, 1 palavra, 1 musica para vermos como estamos sendo egoístas, como olhamos apenas para nossas dificuldades.\nNada como terminar a noite de sábado com a Vigília Pascal, refletindo na ação de graças a musica Belíssimo Esposo. Somente assim consegui ver a minha pequenez, e ver também como nossas vidas são razoavelmente tranquilas.', '2016-03-27', '00:41:40'),
+(10, 'no 11º encontro ser jovem de deus sem deixar de ser jovem....\r\ndeus mudou a minha história, tive um encontro pessoal com jesus através do espírito santo, na presença de nossa senhora, onde foi resgatado em mim a pureza de coração, o "ser amor" para as pessoas, e o estar na presença de deus!  Depois desse encontro, minha vontade de evangelizar e lutar por deus não cabe dentro de mim! foi perfeito, pois o amor reinava naquela casa de retiro!!! obrigada senhor!!!', '2016-07-19', '12:29:34'),
+(11, 'TESTE 13/09/2016', '2016-09-13', '10:46:39');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
