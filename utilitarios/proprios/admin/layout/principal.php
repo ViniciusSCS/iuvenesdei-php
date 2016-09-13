@@ -1,4 +1,5 @@
-<?php 
+<?php
+    include_once '../verificaAutenticacao.php';
     include_once '../default/headerAdmin.php';
     include_once '../default/sidebarAdmin.php'
 ?>
