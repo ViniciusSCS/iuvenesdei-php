@@ -40,4 +40,10 @@ if ($acao == 'login') {
         <?php
 
     }
+}else{
+    ?>
+        <script>
+            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
+        </script>        
+        <?php
 }
