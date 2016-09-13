@@ -20,6 +20,15 @@ class LoginDAO {
         $stmt->execute();
         return $stmt->fetch();
     }
+    
+    public function usuario(LoginVO $log) {
+        $sql = "SELECT * "
+                . " FROM login "
+                . " WHERE nome=$log->nome ";
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 
 }
 

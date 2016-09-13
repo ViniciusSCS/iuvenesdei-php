@@ -1,3 +1,6 @@
+<?php
+    
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +19,7 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="../utilitarios/externos/admin/dist/css/skins/_all-skins.min.css">
-        
+
         <link rel="stylesheet" href="utilitarios/externos/admin/bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -59,7 +62,7 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="../utilitarios/externos/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Vinicius Sarmento</span>
+                                    <span class="hidden-xs"><?php echo $nome; ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
@@ -67,7 +70,7 @@
                                         <img src="../utilitarios/externos/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                         <p>
-                                            Vinicius Sarmento
+
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
