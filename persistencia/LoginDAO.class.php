@@ -16,7 +16,7 @@ class LoginDAO {
                 . " situacao = 1 ";
         $stmt = $this->con->prepare($sql);
         $stmt->bindParam(':usuario', $usuario);
-        $stmt->bindParam(':senha', md5($senha));
+        $stmt->bindParam(':senha', $senha);
         $stmt->execute();
         return $stmt->fetch();
     }

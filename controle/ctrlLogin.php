@@ -11,10 +11,10 @@ $acao = (isset($_POST['acao']));
 
 if ($acao == 'login') {    
 
-//    $usuario = 'vinicius.sarmento';    
-//    $senha = md5('#1DViniS');
-    $usuario = @$_POST['usuario'];    
-    $senha = md5(@$_POST['senha']);
+    $usuario = 'vinicius.sarmento';    
+    $senha = md5('#1DViniS');
+//    $usuario = @$_POST['usuario'];    
+//    $senha = md5(@$_POST['senha']);
 //    print_r($_POST);
 //    echo '<pre>';
     $user = (new LoginDAO)->entrar($usuario, $senha);
