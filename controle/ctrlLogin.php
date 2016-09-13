@@ -20,8 +20,10 @@ if ($acao == 'login') {
         $newUser = (new LoginDAO)->usuario($loginVO);
 //        Sessao::set('usuario', $usuario);
 //        $genero = ($usuario['sexo'] == 1) ? " vindo" : " vinda";
+        
+        
         $_SESSION["idLogin"] = $newUser->getIdLogin();
-        $_SESSION["usuario"] = $newUser->;
+        $_SESSION["usuario"] = $newUser->getUsuario();
         $_SESSION["nome"] = $newUser->getNome();
         ?>
         <script>
