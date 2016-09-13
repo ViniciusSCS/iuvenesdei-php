@@ -2,40 +2,28 @@
 
 //use PDO;
 
-//class Conexao {
-//
-//    static function getConexao() {
-//
-//        $local = "localhost";
-//        $usuar = "iuvenesd_id";
-//        $senha = "vynce@!92";
-//        $banco = "iuvenesd_iuvenesdei";
-//
-//        $con = mysqli_connect($local, $usuar, $senha, $banco);
-//        if (mysqli_error($con)) {
-//            return "Erro ao conectar o banco de dados";
-//        }
-//
-//        return $con;
-//    }
-//
-//}
+class Conexao extends PDO {
 
-class Conexao {
-
-    static function getConexao() {
-
-        $local = "localhost";
-        $usuar = "root";
-        $senha = "";
-        $banco = "iuvenesd_iuvenesdei";
-
-        $con = mysqli_connect($local, $usuar, $senha, $banco);
-        if (mysqli_error($con)) {
-            return "Erro ao conectar o banco de dados";
-        }
-
-        return $con;
+    public function __construct() {
+        parent::__construct(
+                'mysql:host=localhost;'
+                . 'dbname=iuvenesd_iuvenesdei','root', '');
     }
 
 }
+
+
+//class Conexao extends PDO {
+//
+//    public function __construct() {
+//        //parent -- faz relaçao com a classe pai (PDO)
+//        //__construct método criado automaticamente quando estanciamos uma classe
+//        //mysql:host=localhost;dbname=bd_newsletter driver de conexão com o banco de dados
+//        //root -- usuário do banco de dados
+//        // "" -- local para colocar senha do banco de dados
+//        parent::__construct(
+//                'mysql:host=localhost;'
+//                . 'dbname=iuvenesd_iuvenesdei','iuvenesd_iuvenesdei', 'vynce@!92');
+//    }
+//
+//}

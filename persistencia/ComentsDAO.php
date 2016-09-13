@@ -2,6 +2,40 @@
 
 class ComentsDAO {
 
+    public $con;
+
+    public function __construct() {
+        $this->con = new Conexao();
+    }
+
+    function inserirComents(ComentsVO $coment) {
+        $sql = "INSERT INTO postagem (coments, data, hora) "
+                ."VALUES ( "
+                . ":coments, "
+                . "NOW(), "
+                . "NOW())";
+
+        $stmt = $this->con->prepare($sql);
+        $stmt->bindValue(':coments', utf8_decode($coment->getComents()));
+        return $stmt->execute();
+    }
+
+    function buscarComents() {
+        $sql = "SELECT coments FROM postagem ORDER BY idComents DESC ";
+
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+}
+
+
+
+
+
+class Coments {
+
     function inserirComents(ComentsVO $coment) {
         $con = Conexao::getConexao();
 

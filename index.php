@@ -1,4 +1,12 @@
 <?php
+require './persistencia/Conexao.class.php';
+require './persistencia/ComentsDAO.php';
+require './persistencia/ComentsVO.php';
+
+$comentsDAO = new ComentsDAO();
+$formComents = $comentsDAO->buscarComents();
+$total = count($formComents);
+
 
 include_once './utilitarios/proprios/sessao/header.php';
 include_once './utilitarios/proprios/sessao/menu.php';
