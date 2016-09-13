@@ -7,6 +7,8 @@ RewriteRule ^cpanel/principal$ utilitarios/proprios/admin/layout/principal.php [
 RewriteRule ^cpanel/eventos$ utilitarios/proprios/admin/layout/eventos.php [L]
 RewriteRule ^cpanel/album$ utilitarios/proprios/admin/layout/album.php [L]
 
+RewriteRule ^autenticar$ controle/ctrlLogin.php [L]
+
 RewriteRule ^fotos/serJovemVIII$ utilitarios/proprios/fotos/serJovem.php [L]
 
 SetOutputFilter DEFLATE

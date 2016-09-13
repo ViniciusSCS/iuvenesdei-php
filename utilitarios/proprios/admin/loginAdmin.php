@@ -26,7 +26,7 @@
             <div class="login-box-body">
                 <p class="login-box-msg">Faça Login para começar a sessão</p>
 
-                <form action="controle/ctrlLogin.php" method="post" enctype="multipart/form-data" name="login" id="login">
+                <form action="autenticar" method="post" enctype="multipart/form-data" name="login" id="login">
 
                     <div class="form-group has-feedback">
                         <input type="text" id="usuario" class="form-control" placeholder="Usuário">
