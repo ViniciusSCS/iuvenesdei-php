@@ -25,10 +25,11 @@
             </div><!-- /.login-logo -->
             <div class="login-box-body">
                 <p class="login-box-msg">Faça Login para começar a sessão</p>
-                
+
                 <form action="controle/ctrlLogin.php" method="post" enctype="multipart/form-data" name="login" id="login">
+
                     <div class="form-group has-feedback">
-                        <input type="text" id="usuario" class="form-control" placeholder="Usuario">
+                        <input type="text" id="usuario" class="form-control" placeholder="Usuário">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
@@ -38,7 +39,14 @@
                     <div class="row">
                         <input type="hidden" value="login" name="acao" id="acao">
                         <button id="entrar" type="submit" name="entrar" class="btn btn-lg btn-success btn-block">Entrar</button>
+                        <br>
+                        <a href="index">
+                            <button id="voltar" type="button" name="voltar" class="btn btn-lg btn-info btn-block">
+                                Site Iuvenes Dei
+                            </button>
+                        </a>
                     </div>
+
                 </form>
 
             </div><!-- /.login-box-body -->
