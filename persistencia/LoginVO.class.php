@@ -5,6 +5,7 @@ class LoginVO{
     private $nome;
     private $usuario;
     private $senha;
+    private $sexo;
     private $situacao;
 
     function getIdLogin() {
@@ -21,6 +22,10 @@ class LoginVO{
 
     function getSenha() {
         return $this->senha;
+    }
+
+    function getSexo() {
+        return $this->sexo;
     }
 
     function getSituacao() {
@@ -43,9 +48,15 @@ class LoginVO{
         $this->senha = $senha;
     }
 
+    function setSexo($sexo) {
+        $this->sexo = $sexo;
+    }
+
     function setSituacao($situacao) {
         $this->situacao = $situacao;
     }
+
+
 
     
 }

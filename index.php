@@ -5,9 +5,6 @@ require 'persistencia/ComentsVO.php';
 
 $comentsDAO = new ComentsDAO();
 $formComents = $comentsDAO->buscarComents();
-//echo '<pre>';
-//print_r($formComents);
-//exit();
 $total = count($formComents);
 
 
