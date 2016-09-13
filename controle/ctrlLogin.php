@@ -9,16 +9,10 @@ require_once ('../persistencia/Conexao.class.php');
 $acao = (isset($_POST['acao']));
 
 
-if ($acao == 'login') {    
-
-    //$usuario = 'vinicius.sarmento';    
-    //$senha = '#1DViniS';
+if ($acao == 'login') {
     $usuario = @$_POST['usuario'];    
     $senha = @$_POST['senha'];
-//    print_r($_POST);
-//    echo '<pre>';
     $user = (new LoginDAO)->entrar($usuario, md5($senha));
-//    exit();
     
     if ($user != false) {
 //        Sessao::set('usuario', $usuario);

@@ -1,6 +1,7 @@
-<?php 
+<?php
+    include_once '../verificaAutenticacao.php';
     include_once '../default/headerAdmin.php';
-    include_once '../default/sidebarAdmin.php'
+    include_once '../default/sidebarAdmin.php';
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

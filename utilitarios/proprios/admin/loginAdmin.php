@@ -29,11 +29,11 @@
                 <form action="autenticar" method="post" enctype="multipart/form-data" name="login" id="login">
 
                     <div class="form-group has-feedback">
-                        <input type="text" id="usuario" class="form-control" placeholder="Usuário">
+                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" id="senha" class="form-control" placeholder="Senha">
+                        <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
