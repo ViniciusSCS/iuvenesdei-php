@@ -1,13 +1,3 @@
-<?php
-//require './persistencia/Conexao.class.php';
-//require './persistencia/ComentsDAO.php';
-//require './persistencia/ComentsVO.php';
-//
-//$comentsDAO = new ComentsDAO();
-//$formComents = $comentsDAO->buscarComents();
-//$total = count($formComents);
-?> 
-
 
 <section id="comentarios" class="page-section">
     <form action="controle/cntrlComents.php" method="post" name="valide">
@@ -45,11 +35,11 @@
                                 <tr>
                                     <td id='postagem'>
                                         <?php
-                                        echo $comentario->getComents();
+                                        echo utf8_encode($comentario['coments']);
                                         echo '<br>';
-                                        list ($ano, $mes, $dia) = explode("-", $comentario->getData());
+                                        list ($ano, $mes, $dia) = explode("-", $comentario['data']);
                                         echo "<b id='postagem' style='font-size: 12px;'>Postado em: " . $dia . "/" . $mes . "/" . $ano .
-                                        " &agrave;s " . $comentario->getHora() . "</b>";
+                                        " &agrave;s " . $comentario['hora'] . "</b>";
                                         ?>
                                     </td>
                                 </tr>                                    
