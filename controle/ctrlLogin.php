@@ -11,8 +11,8 @@ $acao = (isset($_POST['acao']));
 
 if ($acao == 'login') {    
 
-//    $usuario = 'vinicius.sarmento';    
-//    $senha = '#1DViniS';
+    //$usuario = 'vinicius.sarmento';    
+    //$senha = '#1DViniS';
     $usuario = @$_POST['usuario'];    
     $senha = @$_POST['senha'];
 //    print_r($_POST);
