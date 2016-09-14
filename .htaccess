@@ -2,10 +2,10 @@ RewriteEngine on
 
 RewriteRule ^index$ index.php [L]
 
-RewriteRule ^cpanel$ utilitarios/proprios/admin/loginAdmin.php [L]
-RewriteRule ^cpanel/principal$ utilitarios/proprios/admin/layout/principal.php [L]
-RewriteRule ^cpanel/eventos$ utilitarios/proprios/admin/layout/eventos.php [L]
-RewriteRule ^cpanel/album$ utilitarios/proprios/admin/layout/album.php [L]
+RewriteRule ^admin$ utilitarios/proprios/admin/loginAdmin.php [L]
+RewriteRule ^admin/principal$ utilitarios/proprios/admin/layout/principal.php [L]
+RewriteRule ^admin/eventos$ utilitarios/proprios/admin/layout/eventos.php [L]
+RewriteRule ^admin/album$ utilitarios/proprios/admin/layout/album.php [L]
 
 RewriteRule ^autenticar$ controle/ctrlLogin.php [L]
 RewriteRule ^sair$ controle/ctrlSair.php [L]
