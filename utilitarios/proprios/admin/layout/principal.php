@@ -8,20 +8,28 @@ include_once '../default/sidebarAdmin.php';
         <input type="hidden" id="pagina" value="principal">
         <section class="content-header">
             <h1>
-                Principal
+                <?php
+                    echo "<b>" . $_SESSION['usuario']['nome'] . '!!</b>';
+                ?>
             </h1>
         </section>
         <section class="content">
+
             <?php
                 $genero = ($_SESSION['usuario']['sexo'] == 1) ? " vindo" : " vinda";
-
-                echo $_SESSION['usuario']['nome']. '!! Seja Bem ' . $genero . '. A paz do Senhor esteja convosco!!<br>';
-                echo '<br>Esse é o nosso Painel de Controle.'
-                . ' Ele ainda ta em construção mas aqui voce já pode ter'
-                . 'uma noção de como vai ficar!! '
-                . 'Espero que gostem =D <br>'
-                . 'Ass: Desenvolvedor'
             ?>
+            <div style="text-align: justify">
+                <?php
+                    echo '<br><br> Seja Bem ' . $genero .
+                    '. A paz do Senhor esteja convosco!!<br>';
+                    echo '<br>Esse é o nosso Painel de Controle.'
+                    . ' Ele ainda ta em construção mas aqui voce já pode ter'
+                    . 'uma noção de como vai ficar!! '
+                    . 'Espero que gostem =D <br><br>'
+                    . 'Ass: Desenvolvedor';
+                ?> 
+            </div>
+
         </section>
     </div>
 </section>
