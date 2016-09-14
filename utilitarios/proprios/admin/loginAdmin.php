@@ -27,9 +27,8 @@
                 <p class="login-box-msg">Faça Login para começar a sessão</p>
 
                 <form action="autenticar" method="post" enctype="multipart/form-data" name="login" id="login">
-
                     <div class="form-group has-feedback">
-                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required>
+                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuário" required>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
@@ -46,7 +45,6 @@
                             </button>
                         </a>
                     </div>
-
                 </form>
 
             </div><!-- /.login-box-body -->

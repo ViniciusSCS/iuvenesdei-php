@@ -1,49 +1,36 @@
 <?php
+  require_once ('../persistencia/LoginDAO.class.php');
+  require_once ('../persistencia/LoginVO.class.php');
+  require_once ('../persistencia/Conexao.class.php');
 
-session_start();
+  $acao = (isset($_POST['acao']));
 
-require_once ('../persistencia/LoginDAO.class.php');
-require_once ('../persistencia/LoginVO.class.php');
-require_once ('../persistencia/Conexao.class.php');
+  if ($acao == 'login') {
+    $senha = addslashes($_POST['senha']);
+    $usuario = addslashes($_POST['usuario']);
 
-
-$acao = (isset($_POST['acao']));
-
-
-if ($acao == 'login') {
-    $usuario = @$_POST['usuario'];
-    $senha = @$_POST['senha'];
     $user = (new LoginDAO)->entrar($usuario, md5($senha));
-
     if ($user != false) {
-        $loginVO = new LoginVO();
-        $newUser = (new LoginDAO)->usuario($loginVO);
-//        Sessao::set('usuario', $usuario);
-//        $genero = ($usuario['sexo'] == 1) ? " vindo" : " vinda";
-        
-        
-        $_SESSION["idLogin"] = $newUser->getIdLogin();
-        $_SESSION["usuario"] = $newUser->getUsuario();
-        $_SESSION["nome"] = $newUser->getNome();
-        ?>
-        <script>
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel/principal';
-        </script>
-        <?php
+      session_start();
+      $_SESSION['usuario'] = $user;
+      ?>
+      <script>
+        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel';
+      </script>
+      <?php
 
     } else {
-        ?>
-        <script>
-            alert("Usuario ou Senha Invalidos");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel';
-        </script>        
-        <?php
-
+      ?>
+      <script>
+        alert("Usuario ou Senha Invalidos");
+        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel';
+      </script>
+      <?php
     }
-}else{
+  }else{
     ?>
-        <script>
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
-        </script>        
-        <?php
-}
+    <script>
+      window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
+    </script>
+    <?php
+  }

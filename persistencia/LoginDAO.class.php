@@ -13,21 +13,21 @@ class LoginDAO {
                 . " FROM login "
                 . " WHERE usuario=:usuario AND "
                 . " senha=:senha AND"
-                . " situacao = 1 ";
+                . " situacao = 1 LIMIT 1";
         $stmt = $this->con->prepare($sql);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':senha', $senha);
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    
+
     public function usuario(LoginVO $log) {
         $sql = "SELECT * "
                 . " FROM login "
                 . " WHERE nome=$log->nome ";
         $stmt = $this->con->prepare($sql);
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 }
