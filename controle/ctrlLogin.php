@@ -15,7 +15,7 @@
       $_SESSION['usuario'] = $user;
       ?>
       <script>
-        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel';
+        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/cpanel/principal';
       </script>
       <?php
 
