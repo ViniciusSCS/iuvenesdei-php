@@ -32,11 +32,11 @@
         </a>
       </li>
 
-      <li id="comentarios" class="treeview">
+<!--      <li id="comentarios" class="treeview">
         <a href="comentario.php">
           <i class="fa fa-comments"></i> <span>Comentários</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
-      </li>
+      </li>-->
     </ul>
   </section>
 </aside>
