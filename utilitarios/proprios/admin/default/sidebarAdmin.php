@@ -8,12 +8,12 @@
       </div>
       <div class="pull-left info">
         <p><?= $_SESSION['usuario']['nome'] ?></p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">Navegação</li>
+      <!--<li class="header">Navegação</li>-->
       <li id="principal" class="treeview">
         <a href="principal">
           <i class="fa fa-dashboard"></i> <span>Principal</span> <i class="fa fa-angle-left pull-right"></i>
