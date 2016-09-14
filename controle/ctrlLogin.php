@@ -15,7 +15,8 @@
       $_SESSION['usuario'] = $user;
       ?>
       <script>
-        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/principal';
+//        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/principal';
+        window.location.href = 'http://iuvenesdei.com.br/intranet/principal';
       </script>
       <?php
 
@@ -23,14 +24,16 @@
       ?>
       <script>
         alert("Usuario ou Senha Invalidos");
-        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet';
+//        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet';
+        window.location.href = 'http://iuvenesdei.com.br/intranet';
       </script>
       <?php
     }
   }else{
     ?>
     <script>
-      window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
+//      window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
+      window.location.href = 'http://iuvenesdei.com.br/';
     </script>
     <?php
   }
