@@ -10,6 +10,7 @@
     $usuario = addslashes($_POST['usuario']);
 
     $user = (new LoginDAO)->entrar($usuario, md5($senha));
+    
     if ($user != false) {
       session_start();
       $_SESSION['usuario'] = $user;
