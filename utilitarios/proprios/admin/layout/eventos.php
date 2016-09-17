@@ -1,7 +1,6 @@
 <?php
-//    include_once '../verificaAutenticacao.php';
-    include_once '../default/headerAdmin.php';
-    include_once '../default/sidebarAdmin.php';
+include_once '../default/headerAdmin.php';
+include_once '../default/sidebarAdmin.php';
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -61,30 +60,29 @@
             <div class="box-body">
                 <table class="table table-bordered">
                     <tbody>
+                        <?php
+                        //foreach ($evento as $evento){
+                        
+                        ?>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Titulo</th>
+                            <th>Título</th>
                             <th>Descrição</th>
                             <th style="width: 80px">ação</th>
                         </tr>
                         <tr>
                             <td>1</td>
                             <td>Update software</td>
-                            <td>teste2</td>
+                            <td>teste</td>
                             <td>
                                 <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-trash"></i></button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Clean database</td>
-                            <td>teste2</td>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php
+                        //}
+                        
+                        ?>
                     </tbody>
                 </table>
             </div>
