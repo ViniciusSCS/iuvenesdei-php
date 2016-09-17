@@ -1,6 +1,6 @@
 
 <section id="comentarios" class="page-section">
-    <form action="controle/cntrlComents.php" method="post" name="valide">
+    <form action="controle/ctrlComents.php" method="post" name="valide">
         <input type="hidden" name="acao" id="acao" value="inserir"/>
         <div class="container"> 
             <div class="heading wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms">

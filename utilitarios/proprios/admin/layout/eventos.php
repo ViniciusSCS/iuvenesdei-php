@@ -25,7 +25,8 @@ include_once '../default/sidebarAdmin.php';
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form action="controle/cntrlEventos.php" method="post" name="valide">
+                 <input type="hidden" name="acao" id="acao" value="inserir"/>
                 <div class="box-body">
                     <div class="form-group">
                         <label>Titulo</label>
