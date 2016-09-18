@@ -23,4 +23,14 @@ class EventoDAO {
         return $stmt->execute();
     }
     
+    
+    function  buscaEvento(){
+        $sql = "SELECT * FROM eventos ORDER BY idEvento DESC ";
+        
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute();        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+    
 }

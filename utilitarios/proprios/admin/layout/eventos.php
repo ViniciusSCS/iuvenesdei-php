@@ -1,6 +1,16 @@
 <?php
+require '../../../../persistencia/Conexao.class.php';
+
+require '../../../../persistencia/EventoDAO.class.php';
+require '../../../../persistencia/EventoVO.class.php';
+
 include_once '../default/headerAdmin.php';
 include_once '../default/sidebarAdmin.php';
+
+
+$eventoDAO = new EventoDAO;
+$formEvento = $eventoDAO->buscaEvento();
+$total = count($formEvento);
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -26,7 +36,7 @@ include_once '../default/sidebarAdmin.php';
             <!-- /.box-header -->
             <!-- form start -->
             <form action="../salvarEvento" method="post" name="valide">
-                 <input type="hidden" name="acao" id="acao" value="inserir"/>
+                <input type="hidden" name="acao" id="acao" value="inserir"/>
                 <div class="box-body">
                     <div class="form-group">
                         <label for="titulo" class="required">Titulo</label>
@@ -59,43 +69,39 @@ include_once '../default/sidebarAdmin.php';
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <table class="table table-bordered">
+                <table id="example2" class="table table-responsive">
                     <tbody>
-                        <?php
-                        //foreach ($evento as $evento){
-                        
-                        ?>
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>Título</th>
                             <th>Descrição</th>
-                            <th style="width: 80px">ação</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Update software</td>
-                            <td>teste</td>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-trash"></i></button>
-                            </td>
+                            <th>Imagem</th>
+                            <th style="width: 80px">Ação</th>
                         </tr>
                         <?php
-                        //}
-                        
+                        $contador = 0;
+                        foreach ($formEvento as $evento) {
+                            ?>
+
+                            <tr>
+                                <td><?php echo $evento['idEvento'] ?></td>
+                                <td><?php echo utf8_encode($evento['titulo']) ?></td>
+                                <td><?php echo utf8_encode($evento['descricao']) ?></td>
+                                <td><?php echo $evento['n'] ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <?php
+                        }
                         ?>
                     </tbody>
                 </table>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-                <ul class="pagination pagination-sm no-margin pull-right">
-                    <li><a href="#">«</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
+                <div class="result"></div>
             </div>
         </div>
         <!-- fim Listar -->

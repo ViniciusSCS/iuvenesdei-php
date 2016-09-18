@@ -1,8 +1,8 @@
 <?php
 
 require '../persistencia/Conexao.class.php';
-require '../persistencia/ComentsDAO.php';
-require '../persistencia/ComentsVO.php';
+require '../persistencia/ComentsDAO.class.php';
+require '../persistencia/ComentsVO.class.php';
 
 if (isset($_POST['enviar'])) {
 
