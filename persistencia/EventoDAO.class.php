@@ -21,10 +21,18 @@ class EventoDAO {
         $stmt->bindValue(':descricao', utf8_decode($evento->descricao));
         $stmt->bindValue(':nome_imagem', utf8_decode($evento->nome_imagem));
         return $stmt->execute();
-    }
-    
+    }    
     
     function  buscaEvento(){
+        $sql = "SELECT * FROM eventos ORDER BY idEvento DESC ";
+        
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute();        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+    
+    function  mostraEvento(){
         $sql = "SELECT * FROM eventos ORDER BY idEvento DESC ";
         
         $stmt = $this->con->prepare($sql);

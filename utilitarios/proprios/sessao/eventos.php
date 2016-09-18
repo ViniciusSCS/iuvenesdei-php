@@ -1,3 +1,15 @@
+<?php
+
+    require 'persistencia/EventoDAO.class.php';
+    require 'persistencia/EventoVO.class.php';
+
+
+    $eventoDAO = new EventoDAO;
+    $formEvento = $eventoDAO->buscaEvento();
+    $total = count($formEvento);
+?>
+
+
 <section id="eventos">
     <div class="container">
         <div class="heading wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -20,6 +32,24 @@
                     </div>
                 </div>
             </li>-->
+             <?php
+                        $contador = 0;
+                        foreach ($formEvento as $evento) {
+                            ?>
+            <li>
+                <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
+                <div class="timeline-panel" id="timeline">
+                    <div class="timeline-heading">
+                        <p id="timeline-title"><?php echo utf8_encode($evento['titulo']) ?> </p>
+                    </div>
+                    <div class="timeline-body">
+                        <?php echo $evento['nome_imagem'] ?>
+                    </div>
+                </div>
+            </li>
+               <?php
+                        }
+                        ?>
             <li>
                 <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
                 <div class="timeline-panel" id="timeline">
