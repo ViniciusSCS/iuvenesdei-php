@@ -108,4 +108,4 @@ $total = count($formEvento);
     </section>
 </div>
 <!-- /.content-wrapper -->
-<?php include_once '../default//footerAdmin.php' ?>
+<?php include_once '../default/footerAdmin.php' ?>
