@@ -25,25 +25,25 @@ include_once '../default/sidebarAdmin.php';
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="controle/cntrlEventos.php" method="post" name="valide">
+            <form action="../salvarEvento" method="post" name="valide">
                  <input type="hidden" name="acao" id="acao" value="inserir"/>
                 <div class="box-body">
                     <div class="form-group">
-                        <label>Titulo</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Titulos do evento">
+                        <label for="titulo" class="required">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulos do evento" required>
                     </div>
                     <div class="form-group">
-                        <label>Descrição</label>
-                        <textarea class="form-control" rows="3" placeholder="Digite aqui"></textarea>
+                        <label for="descricao" class="required">Descrição</label>
+                        <textarea class="form-control" rows="3" id="descricao" name="descricao" placeholder="Digite aqui" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">Adcione imagem</label>
-                        <input type="file" id="exampleInputFile">
+                        <label for="nome_imagem">Adcione imagem</label>
+                        <input type="file" id="nome_imagem" name="nome_imagem">
                     </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
+                    <button name="salvar" type="submit" class="btn btn-primary pull-right">Salvar</button>
                 </div>
             </form>
         </div>

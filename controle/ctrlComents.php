@@ -12,8 +12,7 @@ if (isset($_POST['enviar'])) {
 
     $post->setComents($coments);
 
-    $comentsDAO = new ComentsDAO();
-    $id = $comentsDAO->inserirComents($post);
+    $comentsDAO = (new ComentsDAO)->inserirComents($post);
 }
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

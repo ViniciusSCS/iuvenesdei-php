@@ -9,17 +9,17 @@ class EventoDAO {
         $this->con = new Conexao();
     }
     
-    function inserirEvento(ComentsVO $coment) {
-        $sql = "INSERT INTO evento (titulo, descricao, nome_imagem) "
+    function inserirEvento(EventoVO $evento) {
+        $sql = "INSERT INTO eventos (titulo, descricao, nome_imagem) "
                 ."VALUES ( "
                 . ":titulo, "
                 . ":descricao, "
                 . ":nome_imagem)";
 
         $stmt = $this->con->prepare($sql);
-        $stmt->bindValue(':titulo', utf8_decode($coment->titulo));
-        $stmt->bindValue(':descricao', utf8_decode($coment->descricao));
-        $stmt->bindValue(':nome_imagem', utf8_decode($coment->nome_imagem));
+        $stmt->bindValue(':titulo', utf8_decode($evento->titulo));
+        $stmt->bindValue(':descricao', utf8_decode($evento->descricao));
+        $stmt->bindValue(':nome_imagem', utf8_decode($evento->nome_imagem));
         return $stmt->execute();
     }
     
