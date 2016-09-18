@@ -87,7 +87,7 @@ $total = count($formEvento);
                                 <td><?php echo $evento['idEvento'] ?></td>
                                 <td><?php echo utf8_encode($evento['titulo']) ?></td>
                                 <td><?php echo utf8_encode($evento['descricao']) ?></td>
-                                <td><?php echo $evento['n'] ?></td>
+                                <td><?php echo $evento['nome_imagem'] ?></td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-trash"></i></button>
