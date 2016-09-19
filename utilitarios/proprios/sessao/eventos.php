@@ -58,7 +58,7 @@
                     </div>
                     <div class="timeline-body">
                         <p>
-                            <img class="img-responsive" src="utilitarios/imagens/eventos/Slide1.JPG" alt="">
+                            <img class="img-responsive" src="utilitarios/imagens/eventos/Slide1.jpg" alt="">
                         </p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="timeline-body">
                         <p>
-                            <img class="img-responsive" src="utilitarios/imagens/eventos/Slide2.JPG" alt="">
+                            <img class="img-responsive" src="utilitarios/imagens/eventos/Slide2.jpg" alt="">
                         </p>
                     </div>
                 </div>
