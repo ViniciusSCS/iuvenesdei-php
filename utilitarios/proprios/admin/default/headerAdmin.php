@@ -21,15 +21,17 @@
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="../utilitarios/externos/admin/dist/css/skins/_all-skins.min.css">
 
-        <link rel="stylesheet" href="utilitarios/externos/admin/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../utilitarios/externos/admin/bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
-        <link rel="stylesheet" href="utilitarios/externos/admin/dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="../utilitarios/externos/admin/dist/css/AdminLTE.min.css">
         <!-- iCheck -->
-        <link rel="stylesheet" href="utilitarios/externos/admin/plugins/iCheck/square/blue.css">
+        <link rel="stylesheet" href="../utilitarios/externos/admin/plugins/iCheck/square/blue.css">
+        
+        <link href="../utilitarios/externos/bootstrap/datatables/dataTables.bootstrap.css" rel="stylesheet" >
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +44,7 @@
         <div class="wrapper">
             <header class="main-header">
                 <!-- Logo -->
-                <a href="intranet/principal" class="logo">
+                <a href="principal" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>I</b>Dei</span>
                     <!-- logo for regular state and mobile devices -->

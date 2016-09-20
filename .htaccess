@@ -9,6 +9,7 @@ RewriteRule ^intranet/album$ utilitarios/proprios/admin/layout/album.php [L]
 
 RewriteRule ^autenticar$ controle/ctrlLogin.php [L]
 RewriteRule ^salvarEvento$ controle/ctrlEvento.php [L]
+RewriteRule ^excluirEvento$ utilitarios/proprios/admin/controleAdmin/ctrlDeleteEvento.php [L]
 RewriteRule ^sair$ controle/ctrlSair.php [L]
 
 RewriteRule ^fotos/serJovemVIII$ utilitarios/proprios/fotos/serJovem.php [L]

@@ -32,8 +32,8 @@ class EventoDAO {
         
     }
     
-    function  mostraEvento(){
-        $sql = "SELECT * FROM eventos ORDER BY idEvento DESC ";
+    function  deletaEvento($idEvento){
+        $sql = "DELETE FROM eventos WHERE idEvento = $idEvento ";
         
         $stmt = $this->con->prepare($sql);
         $stmt->execute();        
