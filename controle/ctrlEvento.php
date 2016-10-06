@@ -1,80 +1,57 @@
 <?php
+
 require '../persistencia/Conexao.class.php';
 require '../persistencia/EventoDAO.class.php';
 require '../persistencia/EventoVO.class.php';
 
-
 if (isset($_POST['salvar'])) {
-
     $titulo = $_POST['titulo'];
     $descricao = $_POST['descricao'];
-    $nome_imagem = $_POST['nome_imagem'];
 
-//    $nome_imagem = $_FILES['$nome_imagem']['name'];
-//
-//    // Pasta onde o arquivo vai ser salvo
-//    $_UP['pasta'] = '../utilitarios/imagens/eventos';
-//    
-//    // Tamanho máximo do arquivo (em Bytes)
-//    $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
-//    // Array com as extensões permitidas
-//    $_UP['extensoes'] = array('jpg', 'png', 'gif');
-//
-//    // Renomeia o arquivo? (Se true, o arquivo será salvo como .jpg e um nome único)
-//    $_UP['renomeia'] = false;
-//
-//    // Array com os tipos de erros de upload do PHP
-//    $_UP['erros'][0] = 'Não houve erro';
-//    $_UP['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
-//    $_UP['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
-//    $_UP['erros'][3] = 'O upload do arquivo foi feito parcialmente';
-//    $_UP['erros'][4] = 'Não foi feito o upload do arquivo';
-//
-//    // Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
-//    if ($_FILES['arquivo']['error'] != 0) {
-//        die("Não foi possível fazer o upload, erro:<br />" . $_UP['erros'][$_FILES['arquivo']['error']]);
-//        exit; // Para a execução do script
-//    }
-//
-//    // Caso script chegue a esse ponto, não houve erro com o upload e o PHP pode continuar
-//    // Faz a verificação da extensão do arquivo
-//    $extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
-//    if (array_search($extensao, $_UP['extensoes']) === false) {
-//        echo "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
-//    }
-//
-//    // Faz a verificação do tamanho do arquivo
-//    else if ($_UP['tamanho'] < $_FILES['arquivo']['size']) {
-//        echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
-//    }
-//
-//    // O arquivo passou em todas as verificações, hora de tentar movê-lo para a pasta
-//    else {
-//    // Primeiro verifica se deve trocar o nome do arquivo
-//        if ($_UP['renomeia'] == true) {
-//    // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .jpg
-//            $nome_final = time() . '.jpg';
-//        } else {
-//    // Mantém o nome original do arquivo
-//            $nome_final = $_FILES['arquivo']['name'];
-//        }
-//
-//    // Depois verifica se é possível mover o arquivo para a pasta escolhida
-//        if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_final)) {
-//    // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
-//            echo "Upload efetuado com sucesso!";
-//            echo '<br /><a href="' . $_UP['pasta'] . $nome_final . '">Clique aqui para acessar o arquivo</a>';
-//        } else {
-//    // Não foi possível fazer o upload, provavelmente a pasta está incorreta
-//            echo "Não foi possível enviar o arquivo, tente novamente";
-//        }
-//    }
+    $extensaoImagem = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 
-    $evento = new EventoVO();
+    // Pasta onde o arquivo vai ser salvo
+    $_UP['pasta'] = __DIR__.'/../utilitarios/imagens/eventos';
+    // Tamanho máximo do arquivo (em Bytes)
+    $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
+    // Array com as extensões permitidas
+    $_UP['extensoes'] = array('jpg', 'png', 'gif');
+
+    // Array com os tipos de erros de upload do PHP
+    $_UP['erros'][0] = 'Não houve erro';
+    $_UP['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
+    $_UP['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
+    $_UP['erros'][3] = 'O upload do arquivo foi feito parcialmente';
+    $_UP['erros'][4] = 'Não foi feito o upload do arquivo';
+
+    // Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
+    if (!$_FILES['nome_imagem']['error']) {
+       die("Não foi possível fazer o upload, erro:<br />" . $_UP['erros'][$_FILES['nome_imagem']['error']]);
+       exit;
+    }
+
+    // Faz a verificação da extensão do arquivo
+    if (!array_search($extensaoImagem, $_UP['extensoes'])) {
+       echo "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
+    }
+
+    // Verifica o tamanho da imagem
+    if ($_FILES['nome_imagem']['size'] > $_UP['tamanho']) {
+       echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
+    }
+
+    $nomeImagem = uniqid($_FILES['nome_imagem']['name'].'-').'.'.$extensaoImagem;
+
+    // Depois verifica se é possível mover o arquivo para a pasta escolhida
+    if (!move_uploaded_file($_FILES['nome_imagem']['tmp_name'], "{$_UP['pasta']}/$nomeImagem")) {
+        echo "Não foi possível enviar o arquivo, tente novamente";
+    }
+
+    $evento = new EventoVO;
 
     $evento->setTitulo($titulo);
     $evento->setDescricao($descricao);
-    $evento->setNome_imagem($nome_imagem);
+    $evento->setNome_imagem($nomeImagem);
 
     $eventoDAO = (new EventoDAO)->inserirEvento($evento);
 
@@ -84,7 +61,7 @@ if (isset($_POST['salvar'])) {
         <script>
             alert("Evento cadastrado com <b>sucesso</b>");
             window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-        //            window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
         </script>
         <?php
     } else {
@@ -93,7 +70,7 @@ if (isset($_POST['salvar'])) {
         <script>
             alert("<b>Falha</b> ao cadastrar Evento");
             window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-        //            window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
         </script>
         <?php
     }
@@ -109,7 +86,7 @@ if (isset($_POST['excluir'])) {
         <script>
             alert("Evento deletado com <b>sucesso</b>");
             window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-        //            window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
         </script>
         <?php
     } else {
@@ -118,7 +95,7 @@ if (isset($_POST['excluir'])) {
         <script>
             alert("<b>Falha</b> ao deletar Evento");
             window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-        //            window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
         </script>
         <?php
     }

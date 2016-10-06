@@ -4,12 +4,12 @@
                 <nav class="navbar navbar-inverse" role="navigation">
                     <div class="navbar-header">
                         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                            <span class="sr-only"></span> 
-                            <span class="icon-bar"></span> 
-                            <span class="icon-bar"></span> 
-                            <span class="icon-bar"></span> 
+                            <span class="sr-only"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
-                        <a href="index"><img class="img-responsive" src="utilitarios/imagens/icone/icone.png" alt="" /></a>
+                        <a href="/"><img class="img-responsive" src="utilitarios/imagens/icone/icone.png" alt="" /></a>
                     </div>
                     <!--/.navbar-header-->
                     <div id="main-nav" class="collapse navbar-collapse">
@@ -23,6 +23,6 @@
                             <li><a href="#local" class="scroll-link" id="menu">Endere&ccedil;o</a></li>
                         </ul>
                     </div>
-                </nav> 
+                </nav>
             </div>
         </header>

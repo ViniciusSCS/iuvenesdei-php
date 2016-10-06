@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-gb" class="no-js">
+<html lang="pt-BR" class="no-js">
     <head>
         <meta charset="utf-8">
         <meta name=viewport content="width=device-width, initial-scale=1">
@@ -17,6 +17,5 @@
         <link href="utilitarios/externos/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet">
         <link href="utilitarios/externos/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="utilitarios/externos/less/scaffolding.less" rel="stylesheet">
-        <link href="utilitarios/externos/bootstrap/datatables/dataTables.bootstrap.css" rel="stylesheet" >
+        <link href="utilitarios/externos/bootstrap/datatables/dataTables.bootstrap.css" rel="stylesheet">
     </head>
-
