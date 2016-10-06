@@ -60,7 +60,7 @@ $total = count($formEvento);
         <!-- fim inserir -->
 
         <!-- Listar -->
-        
+
         <div class="box box-success">
             <div class="box-header with-border">
                 <h3 class="box-title">Listar eventos</h3>
@@ -92,10 +92,12 @@ $total = count($formEvento);
                                     <td data-title="TÍTULO"><?php echo utf8_encode($evento['titulo']) ?></td>
                                     <td data-title="DESCRIÇÃO"><?php echo utf8_encode($evento['descricao']) ?></td>
                                     <td data-title="IMAGEM"><?php echo $evento['nome_imagem'] ?></td>
-                                    <td style="text-align: center;" data-title="AÇÃO">
+                                    <td style="text-align: center;" data-title="AÇÃO">                                        
                                         <div class="btn-group">
-                                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Opções <span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
+                                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" >
+                                                <i class="fa fa-gear fa-fw "></i> Opções <span class="fa fa-caret-down fa-fw"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
                                                 <li><a href=""><i class="fa fa-fw fa-edit"></i>Alterar</a></li>
                                                 <li><a href="controleAdmin/cntlDeleteEvento.php?idEvento=<?php echo $evento['idEvento'] ?>"><i class="fa fa-fw fa-trash"></i>Excluir</a></li>
                                             </ul>
