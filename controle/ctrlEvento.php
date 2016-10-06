@@ -5,10 +5,13 @@ require '../persistencia/EventoDAO.class.php';
 require '../persistencia/EventoVO.class.php';
 
 if (isset($_POST['salvar'])) {
+    
     $titulo = $_POST['titulo'];
     $descricao = $_POST['descricao'];
 
-    $extensaoImagem = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
+    $extensaoImagem = strtolower(end(explode('.', $_FILES[$_POST['nome_imagem']]['name'])));
+//    print_r($extensaoImagem);
+//    exit();
 
     // Pasta onde o arquivo vai ser salvo
     $_UP['pasta'] = __DIR__.'/../utilitarios/imagens/eventos';
@@ -25,8 +28,8 @@ if (isset($_POST['salvar'])) {
     $_UP['erros'][4] = 'Não foi feito o upload do arquivo';
 
     // Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
-    if (!$_FILES['nome_imagem']['error']) {
-       die("Não foi possível fazer o upload, erro:<br />" . $_UP['erros'][$_FILES['nome_imagem']['error']]);
+    if (!$_FILES[$_POST['nome_imagem']]['error']) {
+       die("Não foi possível fazer o upload, erro:<br />" . $_UP['erros'][$_FILES[$_POST['nome_imagem']]['error']]);
        exit;
     }
 
@@ -40,10 +43,10 @@ if (isset($_POST['salvar'])) {
        echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
     }
 
-    $nomeImagem = uniqid($_FILES['nome_imagem']['name'].'-').'.'.$extensaoImagem;
+    $nomeImagem = uniqid($_FILES[$_POST['nome_imagem']]['name'].'-').'.'.$extensaoImagem;
 
     // Depois verifica se é possível mover o arquivo para a pasta escolhida
-    if (!move_uploaded_file($_FILES['nome_imagem']['tmp_name'], "{$_UP['pasta']}/$nomeImagem")) {
+    if (!move_uploaded_file($_FILES[$_POST['nome_imagem']]['tmp_name'], "{$_UP['pasta']}/$nomeImagem")) {
         echo "Não foi possível enviar o arquivo, tente novamente";
     }
 

@@ -19,7 +19,7 @@ class EventoDAO {
         $stmt = $this->con->prepare($sql);
         $stmt->bindValue(':titulo', utf8_decode($evento->titulo));
         $stmt->bindValue(':descricao', utf8_decode($evento->descricao));
-        $stmt->bindValue(':nome_imagem', utf8_decode($evento->nome_imagem));
+        $stmt->bindValue(':nome_imagem', $evento->nome_imagem);
         return $stmt->execute();
     }    
     
