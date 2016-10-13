@@ -35,7 +35,7 @@ $total = count($formEvento);
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="../salvarEvento" method="post" name="valide">
+            <form action="../salvarEvento" method="POST" name="valide" enctype="multipart/form-data">
                 <input type="hidden" name="acao" id="acao" value="inserir"/>
                 <div class="box-body">
                     <div class="form-group">
@@ -92,7 +92,7 @@ $total = count($formEvento);
                                     <td data-title="TÍTULO"><?php echo utf8_encode($evento['titulo']) ?></td>
                                     <td data-title="DESCRIÇÃO"><?php echo utf8_encode($evento['descricao']) ?></td>
                                     <td data-title="IMAGEM"><?php echo $evento['nome_imagem'] ?></td>
-                                    <td style="text-align: center;" data-title="AÇÃO">                                        
+                                    <td style="text-align: center;" data-title="AÇÃO">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" >
                                                 <i class="fa fa-gear fa-fw "></i> Opções <span class="fa fa-caret-down fa-fw"></span>

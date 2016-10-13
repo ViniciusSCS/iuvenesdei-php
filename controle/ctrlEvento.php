@@ -5,77 +5,67 @@ require '../persistencia/EventoDAO.class.php';
 require '../persistencia/EventoVO.class.php';
 
 if (isset($_POST['salvar'])) {
-    
+
+    $imagem = new stdClass;
     $titulo = $_POST['titulo'];
     $descricao = $_POST['descricao'];
 
-    $extensaoImagem = strtolower(end(explode('.', $_FILES[$_POST['nome_imagem']]['name'])));
-//    print_r($extensaoImagem);
-//    exit();
+    $diretorio = __DIR__.'/../utilitarios/imagens/eventos/'; // Pasta onde o arquivo vai ser salvo
+    $tiposPermitidos = array('image/jpeg','image/png', 'image/jpg'); // Tamanho máximo do arquivo (em Bytes)
+    $tamanhoPermitido = 1024 * 1024 * 2; // Array com as extensões permitidas
 
-    // Pasta onde o arquivo vai ser salvo
-    $_UP['pasta'] = __DIR__.'/../utilitarios/imagens/eventos';
-    // Tamanho máximo do arquivo (em Bytes)
-    $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
-    // Array com as extensões permitidas
-    $_UP['extensoes'] = array('jpg', 'png', 'gif');
+    if(isset($_FILES['nome_imagem'])){ // valida a imagem
+        $arqName = $_FILES['nome_imagem']['name'];
+        $arqType = $_FILES['nome_imagem']['type'];
+        $arqSize = $_FILES['nome_imagem']['size'];
+        $arqTemp = $_FILES['nome_imagem']['tmp_name'];
+        if (array_search($arqType, $tiposPermitidos) === false) {
+            echo "Erro, extensões permitidas: jpg, png ou jpeg";
+            return false;
+        } else if ($arqSize > $tamanhoPermitido) {
+            echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
+            return false;
+        }
 
-    // Array com os tipos de erros de upload do PHP
-    $_UP['erros'][0] = 'Não houve erro';
-    $_UP['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
-    $_UP['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
-    $_UP['erros'][3] = 'O upload do arquivo foi feito parcialmente';
-    $_UP['erros'][4] = 'Não foi feito o upload do arquivo';
+        $imagem->nome = uniqid(time()).$arqName;
+        $imagem->arqTemp = $arqTemp;
 
-    // Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
-    if (!$_FILES[$_POST['nome_imagem']]['error']) {
-       die("Não foi possível fazer o upload, erro:<br />" . $_UP['erros'][$_FILES[$_POST['nome_imagem']]['error']]);
-       exit;
-    }
+        $upload = move_uploaded_file($imagem->arqTemp, $diretorio.$imagem->nome);
+        // Depois verifica se é possível mover o arquivo para a pasta escolhida
+        if (!$upload) {
+            echo "Não foi possível enviar o arquivo, tente novamente";
+            return false;
+        }else{
+            $evento = new EventoVO;
+            $evento->setTitulo($titulo);
+            $evento->setDescricao($descricao);
+            $evento->setNome_imagem($nomeImagem);
 
-    // Faz a verificação da extensão do arquivo
-    if (!array_search($extensaoImagem, $_UP['extensoes'])) {
-       echo "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
-    }
+            $eventoDAO = (new EventoDAO)->inserirEvento($evento);
 
-    // Verifica o tamanho da imagem
-    if ($_FILES['nome_imagem']['size'] > $_UP['tamanho']) {
-       echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
-    }
-
-    $nomeImagem = uniqid($_FILES[$_POST['nome_imagem']]['name'].'-').'.'.$extensaoImagem;
-
-    // Depois verifica se é possível mover o arquivo para a pasta escolhida
-    if (!move_uploaded_file($_FILES[$_POST['nome_imagem']]['tmp_name'], "{$_UP['pasta']}/$nomeImagem")) {
-        echo "Não foi possível enviar o arquivo, tente novamente";
-    }
-
-    $evento = new EventoVO;
-
-    $evento->setTitulo($titulo);
-    $evento->setDescricao($descricao);
-    $evento->setNome_imagem($nomeImagem);
-
-    $eventoDAO = (new EventoDAO)->inserirEvento($evento);
-
-    if ($eventoDAO) {
-        ?>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script>
-            alert("Evento cadastrado com <b>sucesso</b>");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
-        </script>
-        <?php
-    } else {
-        ?>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script>
-            alert("<b>Falha</b> ao cadastrar Evento");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
-        </script>
-        <?php
+            if ($eventoDAO) {
+                ?>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <script>
+                alert("Evento cadastrado com <b>sucesso</b>");
+                window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+                // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+                </script>
+                <?php
+            } else {
+                ?>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <script>
+                alert("<b>Falha</b> ao cadastrar Evento");
+                window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+                // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+                </script>
+                <?php
+            }
+        }
+    }else{
+        echo "Erro";
+        return false;
     }
 }
 
@@ -87,18 +77,18 @@ if (isset($_POST['excluir'])) {
         ?>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script>
-            alert("Evento deletado com <b>sucesso</b>");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+        alert("Evento deletado com <b>sucesso</b>");
+        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+        // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
         </script>
         <?php
     } else {
         ?>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script>
-            alert("<b>Falha</b> ao deletar Evento");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-            // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+        alert("<b>Falha</b> ao deletar Evento");
+        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+        // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
         </script>
         <?php
     }
