@@ -9,7 +9,7 @@ include_once '../default/sidebarAdmin.php';
         <section class="content-header">
             <h1>
                 <?php
-                    echo "<b>" . $_SESSION['usuario']['nome'] . '!!</b>';
+                    echo "<b>" . utf8_encode($_SESSION['usuario']['nome']) . '!!</b>';
                 ?>
             </h1>
         </section>
