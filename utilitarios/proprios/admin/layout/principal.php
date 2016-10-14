@@ -14,6 +14,7 @@ include_once '../default/sidebarAdmin.php';
             </h1>
         </section>
         <section class="content">
+            
 
             <?php
                 $genero = ($_SESSION['usuario']['sexo'] == 1) ? " vindo" : " vinda";

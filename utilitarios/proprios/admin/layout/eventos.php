@@ -77,9 +77,10 @@ $total = count($formEvento);
                         <tbody>
                             <tr>
                                 <th style="text-align: center;">#</th>
-                                <th class="col-md-4">TÍTULO</th>
-                                <th class="col-md-4">DESCRIÇÃO</th>
+                                <th class="col-md-3">TÍTULO</th>
+                                <th class="col-md-3">DESCRIÇÃO</th>
                                 <th>IMAGEM</th>
+                                <th class="col-md-3">POSTADO POR</th>
                                 <th style="text-align: center;">AÇÃO</th>
                             </tr>
                             <?php
@@ -91,10 +92,13 @@ $total = count($formEvento);
                                     <td style="text-align: center;" data-title="#"><?php echo '# ' . $evento['idEvento'] ?></td>
                                     <td data-title="TÍTULO"><?php echo utf8_encode($evento['titulo']) ?></td>
                                     <td data-title="DESCRIÇÃO"><?php echo utf8_encode($evento['descricao']) ?></td>
-                                    <td data-title="IMAGEM"><?php echo $evento['nome_imagem'] ?></td>
+                                    <td style="text-align: center;" data-title="IMAGEM">
+                                        <img class="img-responsive" width="50px" src="../<?php echo $evento['nome_imagem'] ?>">
+                                    </td>
+                                    <td data-title="DESCRIÇÃO"><?php echo utf8_encode($evento['nome']) ?></td>
                                     <td style="text-align: center;" data-title="AÇÃO">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" >
+                                            <button type="button" class="btn btn-default btn-sm dropdown-toggle disabled" data-toggle="dropdown" >
                                                 <i class="fa fa-gear fa-fw "></i> Opções <span class="fa fa-caret-down fa-fw"></span>
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right">

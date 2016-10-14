@@ -10,13 +10,15 @@ class EventoDAO {
     }
     
     function inserirEvento(EventoVO $evento) {
-        $sql = "INSERT INTO eventos (titulo, descricao, nome_imagem) "
+        $sql = "INSERT INTO eventos (idLogin, titulo, descricao, nome_imagem) "
                 ."VALUES ( "
-                . ":titulo, "
-                . ":descricao, "
-                . ":nome_imagem)";
+                . " :idLogin, "
+                . " :titulo, "
+                . " :descricao, "
+                . " :nome_imagem)";
 
         $stmt = $this->con->prepare($sql);
+        $stmt->bindValue(':idLogin', $_SESSION['usuario']['idLogin']);
         $stmt->bindValue(':titulo', utf8_decode($evento->titulo));
         $stmt->bindValue(':descricao', utf8_decode($evento->descricao));
         $stmt->bindValue(':nome_imagem', $evento->nome_imagem);
@@ -24,7 +26,11 @@ class EventoDAO {
     }    
     
     function  buscaEvento(){
-        $sql = "SELECT * FROM eventos ORDER BY idEvento DESC ";
+        $sql = "SELECT e.*, "
+                . "     l.nome "
+                . " FROM eventos AS e, login AS l "
+                . " WHERE l.idLogin = e.idLogin "
+                . " ORDER BY e.idEvento DESC ";
         
         $stmt = $this->con->prepare($sql);
         $stmt->execute();        
