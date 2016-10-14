@@ -99,11 +99,7 @@ $total = count($formEvento);
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right">
                                                 <li><a href=""><i class="fa fa-fw fa-edit"></i>Alterar</a></li>
-                                                <li>
-                                                    <a href="controleAdmin/cntlDeleteEvento.php?idEvento=<?php echo $evento['idEvento'] ?>">
-                                                        <i class="fa fa-fw fa-trash"></i>Excluir
-                                                    </a>
-                                                </li>
+                                                <li><a href="controleAdmin/cntlDeleteEvento.php?idEvento=<?php echo $evento['idEvento'] ?>"><i class="fa fa-fw fa-trash"></i>Excluir</a></li>
                                             </ul>
                                         </div>
                                     </td>
