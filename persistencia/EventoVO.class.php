@@ -3,12 +3,17 @@
 
 class EventoVO {
     public $idEvento;
+    public $idLogin;
     public $titulo;
     public $descricao;
     public $nome_imagem;
-    
+            
     function getIdEvento() {
         return $this->idEvento;
+    }
+            
+    function getIdLogin() {
+        return $this->idLogin;
     }
 
     function getTitulo() {
@@ -25,6 +30,10 @@ class EventoVO {
 
     function setIdEvento($idEvento) {
         $this->idEvento = $idEvento;
+    }
+
+    function setIdLogin($idLogin) {
+        $this->idLogin = $idLogin;
     }
 
     function setTitulo($titulo) {

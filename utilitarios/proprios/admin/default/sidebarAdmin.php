@@ -27,7 +27,7 @@
       </li>
 
       <li id="album" class="treeview">
-        <a href="album" class="treeview">
+        <a href="album">
           <i class="fa fa-book"></i> <span>Albuns</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
       </li>

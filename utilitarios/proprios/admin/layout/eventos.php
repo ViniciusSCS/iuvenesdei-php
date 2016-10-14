@@ -48,7 +48,7 @@ $total = count($formEvento);
                     </div>
                     <div class="form-group">
                         <label for="nome_imagem">Adcione imagem</label>
-                        <input type="file" id="nome_imagem" name="nome_imagem">
+                        <input type="file" id="nome_imagem" name="nome_imagem" required>
                     </div>
                 </div>
                 <!-- /.box-body -->
