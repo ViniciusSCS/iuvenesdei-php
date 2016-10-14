@@ -18,7 +18,7 @@ class EventoDAO {
                 . " :nome_imagem)";
 
         $stmt = $this->con->prepare($sql);
-        $stmt->bindValue(':idLogin', $_SESSION['usuario']['idLogin']);
+        $stmt->bindParam(':idLogin', $_SESSION['idLogin']);
         $stmt->bindValue(':titulo', utf8_decode($evento->titulo));
         $stmt->bindValue(':descricao', utf8_decode($evento->descricao));
         $stmt->bindValue(':nome_imagem', $evento->nome_imagem);

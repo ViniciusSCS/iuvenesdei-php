@@ -37,6 +37,7 @@ $total = count($formEvento);
             <!-- form start -->
             <form action="../salvarEvento" method="POST" name="valide" enctype="multipart/form-data">
                 <input type="hidden" name="acao" id="acao" value="inserir"/>
+                <input type="hidden" name="idLogin" id="idLogin" value="<?php $_SESSION['idLogin'] ?>"/>
                 <div class="box-body">
                     <div class="form-group">
                         <label for="titulo" class="required">Titulo</label>
@@ -89,21 +90,37 @@ $total = count($formEvento);
                                 ?>
 
                                 <tr>
-                                    <td style="text-align: center;" data-title="#"><?php echo '# ' . $evento['idEvento'] ?></td>
-                                    <td data-title="TÍTULO"><?php echo utf8_encode($evento['titulo']) ?></td>
-                                    <td data-title="DESCRIÇÃO"><?php echo utf8_encode($evento['descricao']) ?></td>
+                                    <td style="text-align: center;" data-title="#">
+                                        <?php echo '# ' . $evento['idEvento'] ?>
+                                    </td>
+                                    <td data-title="TÍTULO">
+                                        <?php echo utf8_encode($evento['titulo']) ?>
+                                    </td>
+                                    <td data-title="DESCRIÇÃO">
+                                        <?php echo utf8_encode($evento['descricao']) ?>
+                                    </td>
                                     <td style="text-align: center;" data-title="IMAGEM">
                                         <img class="img-responsive" width="50px" src="../<?php echo $evento['nome_imagem'] ?>">
                                     </td>
-                                    <td data-title="DESCRIÇÃO"><?php echo utf8_encode($evento['nome']) ?></td>
+                                    <td data-title="POSTADO POR">
+                                        <?php echo utf8_encode($evento['nome']) ?>
+                                    </td>
                                     <td style="text-align: center;" data-title="AÇÃO">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-default btn-sm dropdown-toggle disabled" data-toggle="dropdown" >
                                                 <i class="fa fa-gear fa-fw "></i> Opções <span class="fa fa-caret-down fa-fw"></span>
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href=""><i class="fa fa-fw fa-edit"></i>Alterar</a></li>
-                                                <li><a href="controleAdmin/cntlDeleteEvento.php?idEvento=<?php echo $evento['idEvento'] ?>"><i class="fa fa-fw fa-trash"></i>Excluir</a></li>
+                                                <li>
+                                                    <a href="">
+                                                        <i class="fa fa-fw fa-edit"></i>Alterar
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="controleAdmin/cntlDeleteEvento.php?idEvento=<?php echo $evento['idEvento'] ?>">
+                                                        <i class="fa fa-fw fa-trash"></i>Excluir
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>

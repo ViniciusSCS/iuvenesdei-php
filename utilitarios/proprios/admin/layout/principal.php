@@ -9,14 +9,14 @@ include_once '../default/sidebarAdmin.php';
         <section class="content-header">
             <h1>
                 <?php
-                    echo "<b>" . utf8_encode($_SESSION['usuario']['nome']) . '!!</b>';
+                    echo "<b>" . utf8_encode($_SESSION['nome']) . '!!</b>';
                 ?>
             </h1>
         </section>
         <section class="content">
 
             <?php
-                $genero = ($_SESSION['usuario']['sexo'] == 1) ? " vindo" : " vinda";
+                $genero = ($_SESSION['sexo'] == 1) ? " vindo" : " vinda";
             ?>
             <div style="text-align: justify">
                 <?php

@@ -24,8 +24,9 @@ class LoginDAO {
     public function usuario(LoginVO $log) {
         $sql = "SELECT * "
                 . " FROM login "
-                . " WHERE nome=$log->nome ";
+                . " WHERE nome=:nome ";
         $stmt = $this->con->prepare($sql);
+        $stmt->bindParam(':nome', $log->nome);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

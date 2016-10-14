@@ -1,8 +1,11 @@
 <?php
 
+session_start();
+
 require '../persistencia/Conexao.class.php';
 require '../persistencia/EventoDAO.class.php';
 require '../persistencia/EventoVO.class.php';
+
 
 if (isset($_POST['salvar'])) {
 
@@ -41,6 +44,9 @@ if (isset($_POST['salvar'])) {
             $evento->setTitulo($titulo);
             $evento->setDescricao($descricao);
             $evento->setNome_imagem($diretorioImagem.$imagem->nome);
+            
+//            var_dump($evento);
+//            exit();
 
             $eventoDAO = (new EventoDAO)->inserirEvento($evento);
 
