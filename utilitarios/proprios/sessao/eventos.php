@@ -64,22 +64,6 @@ $total = count($formEvento);
                     </div>
                 </div>
             </li>
-
-            <li>
-                <div class="timeline-badge success"><i class="fa fa-video-camera fa-lg"></i></div>
-                <div class="timeline-panel" id="timeline">
-                    <div class="timeline-heading">
-                        <p id="timeline-title">Quadrilha</p>
-                    </div>
-                    <div class="timeline-body">
-                        <p>                                    
-                            <video src="utilitarios/video/Quadrilha-20160630.mp4" controls="controls" width="800" heigth="800">
-
-                            </video>
-                        </p>
-                    </div>
-                </div>
-            </li>
         </ul>
     </div>
 </section>

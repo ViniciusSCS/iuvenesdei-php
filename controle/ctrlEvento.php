@@ -12,7 +12,7 @@ if (isset($_POST['salvar'])) {
 
     $diretorio = __DIR__.'/../utilitarios/imagens/eventos/'; // Pasta onde o arquivo vai ser salvo
     $diretorioImagem = 'utilitarios/imagens/eventos/'; // Pasta onde o arquivo vai ser salvo
-    $tiposPermitidos = array('image/jpeg','image/png', 'image/jpg'); // Tamanho máximo do arquivo (em Bytes)
+    $tiposPermitidos = array('image/jpeg','image/png', 'image/jpg', ); // Tamanho máximo do arquivo (em Bytes)
     $tamanhoPermitido = 1024 * 1024 * 2; // Array com as extensões permitidas
 
     if(isset($_FILES['nome_imagem'])){ // valida a imagem
