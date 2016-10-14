@@ -1,12 +1,11 @@
 <?php
+require 'persistencia/EventoDAO.class.php';
+require 'persistencia/EventoVO.class.php';
 
-    require 'persistencia/EventoDAO.class.php';
-    require 'persistencia/EventoVO.class.php';
 
-
-    $eventoDAO = new EventoDAO;
-    $formEvento = $eventoDAO->buscaEvento();
-    $total = count($formEvento);
+$eventoDAO = new EventoDAO;
+$formEvento = $eventoDAO->buscaEvento();
+$total = count($formEvento);
 ?>
 
 
@@ -20,36 +19,24 @@
             </div> 
         </div>
         <ul class="timeline">
-            <!--<li>
-                <div class="timeline-badge success"><i class="fa fa-volume-up fa-lg"></i></div>
-                <div class="timeline-panel" id="timeline">
-                    <div class="timeline-heading">
-                        <p id="timeline-title">Nossa Rádio</p>
+            <?php
+            $contador = 0;
+            foreach ($formEvento as $evento) {
+                ?>
+                <li>
+                    <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
+                    <div class="timeline-panel" id="timeline">
+                        <div class="timeline-heading">
+                            <p id="timeline-title"><?php echo utf8_encode($evento['titulo']) ?> </p>
+                        </div>
+                        <div class="timeline-body">
+                            <?php echo $evento['nome_imagem'] ?>
+                        </div>
                     </div>
-                    <div class="timeline-body">
-                        <iframe src="http://player.crosshost.com.br/playerdev/newplayer/42?versao=2" width="100%" height="600" framespacing="0" frameborder="no">
-                        </iframe>
-                    </div>
-                </div>
-            </li>-->
-             <?php
-                        $contador = 0;
-                        foreach ($formEvento as $evento) {
-                            ?>
-            <li>
-                <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
-                <div class="timeline-panel" id="timeline">
-                    <div class="timeline-heading">
-                        <p id="timeline-title"><?php echo utf8_encode($evento['titulo']) ?> </p>
-                    </div>
-                    <div class="timeline-body">
-                        <?php echo $evento['nome_imagem'] ?>
-                    </div>
-                </div>
-            </li>
-               <?php
-                        }
-                        ?>
+                </li>
+                <?php
+            }
+            ?>
             <li>
                 <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
                 <div class="timeline-panel" id="timeline">

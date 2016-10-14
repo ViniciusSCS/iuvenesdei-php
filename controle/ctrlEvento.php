@@ -39,7 +39,7 @@ if (isset($_POST['salvar'])) {
             $evento = new EventoVO;
             $evento->setTitulo($titulo);
             $evento->setDescricao($descricao);
-            $evento->setNome_imagem($nomeImagem);
+            $evento->setNome_imagem($imagem->nome);
 
             $eventoDAO = (new EventoDAO)->inserirEvento($evento);
 
@@ -48,7 +48,7 @@ if (isset($_POST['salvar'])) {
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <script>
                 alert("Evento cadastrado com <b>sucesso</b>");
-                window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+//                window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
                 // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
                 </script>
                 <?php
