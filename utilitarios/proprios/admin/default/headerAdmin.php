@@ -67,7 +67,7 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!--<img src="../utilitarios/externos/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
-                                    <span class="hidden-xs"><?= $_SESSION['usuario']['nome'] ?></span>
+                                    <span class="hidden-xs"><?= utf8_encode($_SESSION['usuario']['nome']) ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
@@ -75,7 +75,7 @@
                                         <!--<img src="../utilitarios/externos/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
 
                                         <p>
-                                          <?= $_SESSION['usuario']['nome'] ?>
+                                          <?= utf8_encode($_SESSION['usuario']['nome']) ?>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
