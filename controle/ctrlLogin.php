@@ -21,7 +21,7 @@ if ($acao == 'login') {
         ?>
         <script>
             window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/principal';
-        //        window.location.href = 'http://iuvenesdei.com.br/intranet/principal';
+//                window.location.href = 'http://iuvenesdei.com.br/intranet/principal';
         </script>
         <?php
 
@@ -30,7 +30,7 @@ if ($acao == 'login') {
         <script>
             alert("Usuario ou Senha Invalidos");
             window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet';
-        //        window.location.href = 'http://iuvenesdei.com.br/intranet';
+//                window.location.href = 'http://iuvenesdei.com.br/intranet';
         </script>
         <?php
 

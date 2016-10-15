@@ -45,9 +45,6 @@ if (isset($_POST['salvar'])) {
             $evento->setDescricao($descricao);
             $evento->setNome_imagem($diretorioImagem.$imagem->nome);
             
-//            var_dump($evento);
-//            exit();
-
             $eventoDAO = (new EventoDAO)->inserirEvento($evento);
 
             if ($eventoDAO) {
