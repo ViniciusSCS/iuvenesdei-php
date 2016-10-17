@@ -44,9 +44,6 @@ if (isset($_POST['salvar'])) {
             $evento->setTitulo($titulo);
             $evento->setDescricao($descricao);
             $evento->setNome_imagem($diretorioImagem.$imagem->nome);
-            
-//            var_dump($evento);
-//            exit();
 
             $eventoDAO = (new EventoDAO)->inserirEvento($evento);
 
@@ -56,7 +53,7 @@ if (isset($_POST['salvar'])) {
                 <script>
                 alert("Evento cadastrado com <b>sucesso</b>");
                 window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-                // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+                // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
                 </script>
                 <?php
             } else {
@@ -65,7 +62,7 @@ if (isset($_POST['salvar'])) {
                 <script>
                 alert("<b>Falha</b> ao cadastrar Evento");
                 window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-                // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+                // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
                 </script>
                 <?php
             }
@@ -86,7 +83,7 @@ if (isset($_POST['excluir'])) {
         <script>
         alert("Evento deletado com <b>sucesso</b>");
         window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-        // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+        // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
         </script>
         <?php
     } else {
@@ -95,7 +92,7 @@ if (isset($_POST['excluir'])) {
         <script>
         alert("<b>Falha</b> ao deletar Evento");
         window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
-        // window.location.href = 'http://iuvenesdei.com.br/#comentarios';
+        // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
         </script>
         <?php
     }
