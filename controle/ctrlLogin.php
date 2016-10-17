@@ -3,6 +3,8 @@
 require_once ('../persistencia/LoginDAO.class.php');
 require_once ('../persistencia/LoginVO.class.php');
 require_once ('../persistencia/Conexao.class.php');
+require_once ('../action/Mensagem.class.php');
+require_once ('../action/Sessao.class.php');
 
 $acao = (isset($_POST['acao']));
 
@@ -14,32 +16,22 @@ if ($acao == 'login') {
 
     if (count($user) > 0) {
         session_start();
-        $_SESSION['idLogin'] = $user['idLogin'];
-        $_SESSION['usuario'] = $user['usuario'];
-        $_SESSION['nome'] = $user['nome'];
-        $_SESSION['sexo'] = $user['sexo'];
-        ?>
-        <script>
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/principal';
-//                window.location.href = 'http://iuvenesdei.com.br/intranet/principal';
-        </script>
-        <?php
+        Sessao::set('usuario', $user);
+        Sessao::set('mensagem', Mensagem::montar(sprintf(Mensagem::msg001), 1));
+        
+        header("location:/Eventos/IuvenesDei/iuvenesdei/intranet/principal");
 
     } else {
-        ?>
-        <script>
-            alert("Usuario ou Senha Invalidos");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet';
-//                window.location.href = 'http://iuvenesdei.com.br/intranet';
-        </script>
-        <?php
-
+        
+        Sessao::set('mensagem', Mensagem::montar(sprintf(Mensagem::msg002), 0));
+        
+        header("location:/Eventos/IuvenesDei/iuvenesdei/intranet");
     }
 } else {
     ?>
     <script>
         window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
-    //      window.location.href = 'http://iuvenesdei.com.br/';
+        //      window.location.href = 'http://iuvenesdei.com.br/';
     </script>
     <?php
 

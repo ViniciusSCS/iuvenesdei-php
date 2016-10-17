@@ -23,6 +23,8 @@ $total = count($formEvento);
         </h1>
     </section>
 
+
+    
     <!-- Contente -->
     <section class="content">
         <!-- Inserir -->
@@ -37,7 +39,6 @@ $total = count($formEvento);
             <!-- form start -->
             <form action="../salvarEvento" method="POST" name="valide" enctype="multipart/form-data">
                 <input type="hidden" name="acao" id="acao" value="inserir"/>
-                <input type="hidden" name="idLogin" id="idLogin" value="<?php $_SESSION['idLogin'] ?>"/>
                 <div class="box-body">
                     <div class="form-group">
                         <label for="titulo" class="required">Titulo</label>
@@ -145,4 +146,5 @@ $total = count($formEvento);
     </section>
 </div>
 <!-- /.content-wrapper -->
-<?php include_once '../default/footerAdmin.php' ?>
+<?php 
+include_once '../default/footerAdmin.php';

@@ -7,7 +7,7 @@
         <img src="../utilitarios/imagens/icone/icone.png" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p><?= utf8_encode($_SESSION['nome']) ?></p>
+        <p><?= utf8_encode($_SESSION['usuario']['nome']) ?></p>
         <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
       </div>
     </div>

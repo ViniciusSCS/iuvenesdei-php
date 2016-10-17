@@ -34,5 +34,14 @@
                 });
             });
         </script>
+        <script>
+            $(document).ready(function () {
+                $('.message').delay(5000).fadeOut();
+                $('select').selectpicker();
+            });
+        </script>
     </body>
 </html>
+<?php
+
+    Sessao::clear('mensagem');
