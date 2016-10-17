@@ -41,11 +41,11 @@ $total = count($formEvento);
                 <div class="box-body">
                     <div class="form-group">
                         <label for="titulo" class="required">Titulo</label>
-                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulos do evento" required>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulos do evento" >
                     </div>
                     <div class="form-group">
                         <label for="descricao" class="required">Descrição</label>
-                        <textarea class="form-control" rows="3" id="descricao" name="descricao" placeholder="Digite aqui" style="resize: none" required></textarea>
+                        <textarea class="form-control" rows="3" id="descricao" name="descricao" placeholder="Digite aqui" style="resize: none" ></textarea>
                     </div>
                     <div class="form-group">
                         <label for="nome_imagem">Adcione imagem</label>
