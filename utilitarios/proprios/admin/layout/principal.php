@@ -23,9 +23,9 @@ include_once '../default/sidebarAdmin.php';
                     echo '<br><br> Seja Bem ' . $genero .
                     '. A paz do Senhor esteja convosco!!<br>';
                     echo '<br>Esse é o nosso Painel de Controle.'
-                    . ' Ele ainda ta em construção mas aqui voce já pode ter'
+                    . ' Ele ainda está em construção, mas, aqui voce já pode ter '
                     . 'uma noção de como vai ficar!! '
-                    . 'Espero que gostem =D <br><br>'
+                    . 'Espero que goste =D <br><br>'
                     . 'Ass: Desenvolvedor';
                 ?> 
             </div>
