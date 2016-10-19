@@ -2,7 +2,7 @@
             <div class="pull-right hidden-xs">
                 <b>Versão</b> 1.8.0
             </div>
-            <strong>Copyright &copy; 2016-<?php echo date("Y") ?> </strong> Todos direitos reservado.
+            <strong>Copyright &copy; 2016-<?php echo date("Y") ?> </strong> Todos os direitos reservados.
         </footer>
 
         </div>
