@@ -2,7 +2,7 @@
             <div class="pull-right hidden-xs">
                 <b>Versão</b> 1.8.0
             </div>
-            <strong>Copyright &copy; 2016-<?php echo date("Y") ?> </strong> Todos os direitos reservados.
+            <strong> &copy; Copyright 2007 - <?php echo date("Y") ?> </strong> Grupo de Ora&ccedil;&atilde;o Iuvenes Dei.
         </footer>
 
         </div>
