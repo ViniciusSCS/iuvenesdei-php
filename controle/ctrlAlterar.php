@@ -22,11 +22,11 @@ if (isset($_POST['salvar'])) {
     $tiposPermitidos = array('image/jpeg', 'image/png', 'image/jpg',); // Tamanho máximo do arquivo (em Bytes)
     $tamanhoPermitido = 1024 * 1024 * 2; // Array com as extensões permitidas
 
-    if (isset($_FILES['nome_imagem'])) { // valida a imagem
-        $arqName = $_FILES['nome_imagem']['name'];
-        $arqType = $_FILES['nome_imagem']['type'];
-        $arqSize = $_FILES['nome_imagem']['size'];
-        $arqTemp = $_FILES['nome_imagem']['tmp_name'];
+    if (isset($_FILES['capa'])) { // valida a imagem
+        $arqName = $_FILES['capa']['name'];
+        $arqType = $_FILES['capa']['type'];
+        $arqSize = $_FILES['capa']['size'];
+        $arqTemp = $_FILES['capa']['tmp_name'];
         if (array_search($arqType, $tiposPermitidos) === false) {
             echo "Erro, extensões permitidas: jpg, png ou jpeg";
             return false;
@@ -35,16 +35,16 @@ if (isset($_POST['salvar'])) {
             return false;
         }
 
-        $imagem->nome = uniqid(time()) . $arqName;
-        $imagem->arqTemp = $arqTemp;
+        $capa->nome = uniqid(time()) . $arqName;
+        $capa->arqTemp = $arqTemp;
 
-        $upload = move_uploaded_file($imagem->arqTemp, $diretorio . $imagem->nome);
+        $upload = move_uploaded_file($capa->arqTemp, $diretorio . $capa->nome);
         // Depois verifica se é possível mover o arquivo para a pasta escolhida
         if (!$upload) {
             echo "Não foi possível enviar o arquivo, tente novamente";
             return false;
         } else {
-            
+            //Aqui é onde o sistema salva no banco
         }
     } else {
         echo "Erro";
