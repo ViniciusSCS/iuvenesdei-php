@@ -35,7 +35,6 @@ $total = count($formEvento);
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 </div>
             </div>
-            <!-- /.box-header -->
             <!-- form start -->
             <form action="../salvarEvento" method="POST" name="valide" enctype="multipart/form-data">
                 <input type="hidden" name="acao" id="acao" value="inserir"/>
