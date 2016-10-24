@@ -26,20 +26,20 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form action="../salvarAlbum" method="POST" name="valide" enctype="multipart/form-data">
                 <div class="box-body">
                     <div class="form-group">
                         <label>Titulo</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Titulos da capa">
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulos da capa" required>
                     </div>
                     <div class="form-group">
                         <label>Adcione a imagem da capa</label>
-                        <input type="file" id="">
+                        <input type="file" id="capa" name="capa" required>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="exampleInputFile">Adcione imagens</label>
-                        <input type="file" id="exampleInputFile">
+                        <input type="file" id="foto" name="foto" required>
                     </div>
                 </div>
                 <!-- /.box-body -->
