@@ -32,6 +32,9 @@ $total = count($formEvento);
                         <div class="timeline-body">
                             <img src="<?php echo $evento['nome_imagem'] ?>">
                         </div>
+                        <div class="timeline-footer">
+                            <p id="timeline-title"><?php echo utf8_encode($evento['descricao']) ?> </p>
+                        </div>
                     </div>
                 </li>
                 <?php
