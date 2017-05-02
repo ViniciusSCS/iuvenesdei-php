@@ -52,13 +52,13 @@ if (isset($_POST['salvar'])) {
 
                 Sessao::set('mensagem', Mensagem::montar(sprintf(Mensagem::msg003), 1));
 
-                header("location:/Eventos/IuvenesDei/iuvenesdei/intranet/eventos");
+                header("location:/iuvenesdei/intranet/eventos");
             } else {
                 ?>
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <script>
                     alert("<b>Falha</b> ao cadastrar Evento");
-                    window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+                    window.location.href = 'http://localhost:8080/iuvenesdei/intranet/eventos';
                     // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
                 </script>
                 <?php
@@ -79,7 +79,7 @@ if (isset($_POST['excluir'])) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script>
             alert("Evento deletado com <b>sucesso</b>");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+            window.location.href = 'http://localhost/iuvenesdei/intranet/eventos';
             // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
         </script>
         <?php
@@ -88,7 +88,7 @@ if (isset($_POST['excluir'])) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script>
             alert("<b>Falha</b> ao deletar Evento");
-            window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei/intranet/eventos';
+            window.location.href = 'http://localhost/iuvenesdei/intranet/eventos';
             // window.location.href = 'http://iuvenesdei.com.br/intranet/eventos';
         </script>
         <?php

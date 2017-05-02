@@ -40,7 +40,7 @@ $total = count($formEvento);
                 <?php
             }
             ?>
-            <li>
+<!--            <li>
                 <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
                 <div class="timeline-panel" id="timeline">
                     <div class="timeline-heading">
@@ -52,9 +52,9 @@ $total = count($formEvento);
                         </p>
                     </div>
                 </div>
-            </li>
+            </li>-->
 
-            <li>
+<!--            <li>
                 <div class="timeline-badge success"><i class="fa fa-check fa-lg"></i></div>
                 <div class="timeline-panel" id="timeline">
                     <div class="timeline-heading">
@@ -66,7 +66,7 @@ $total = count($formEvento);
                         </p>
                     </div>
                 </div>
-            </li>
+            </li>-->
         </ul>
     </div>
 </section>
