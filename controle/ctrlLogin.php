@@ -19,18 +19,18 @@ if ($acao == 'login') {
         Sessao::set('usuario', $user);
         Sessao::set('mensagem', Mensagem::montar(sprintf(Mensagem::msg001), 1));
         
-        header("location:/Eventos/IuvenesDei/iuvenesdei/intranet/principal");
+        header("location:/iuvenesdei/intranet/principal");
 
     } else {
         
         Sessao::set('mensagem', Mensagem::montar(sprintf(Mensagem::msg002), 0));
         
-        header("location:/Eventos/IuvenesDei/iuvenesdei/intranet");
+        header("location:/iuvenesdei/intranet");
     }
 } else {
     ?>
     <script>
-        window.location.href = 'http://localhost:8080/Eventos/IuvenesDei/iuvenesdei';
+        window.location.href = 'http://localhost/iuvenesdei';
         //      window.location.href = 'http://iuvenesdei.com.br/';
     </script>
     <?php
