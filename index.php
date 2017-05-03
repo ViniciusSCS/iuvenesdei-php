@@ -13,6 +13,7 @@ require './utilitarios/proprios/sessao/menu.php';
 require './utilitarios/proprios/sessao/home.php';
 require './utilitarios/proprios/sessao/eventos.php';
 require './utilitarios/proprios/sessao/album.php';
+require './utilitarios/proprios/sessao/reflexao.php';
 require './utilitarios/proprios/sessao/coments.php';
 require './utilitarios/proprios/sessao/sobreNos.php';
 require './utilitarios/proprios/sessao/oracao.php';

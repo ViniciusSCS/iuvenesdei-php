@@ -32,13 +32,22 @@
                     "autoWidth": true,
                     "responsive": true
                 });
+                $('#reflex').DataTable({
+                    "paging": true,
+                    "searching": false,
+                    "ordering": false,
+                    "info": true,
+                    "lengthChange": false,
+                    "autoWidth": true,
+                    "responsive": true
+                });
             });
         </script>        
         <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
                 i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
+                    (i[r].q = i[r].q || []).push(arguments),
                 }, i[r].l = 1 * new Date();
                 a = s.createElement(o),
                         m = s.getElementsByTagName(o)[0];
